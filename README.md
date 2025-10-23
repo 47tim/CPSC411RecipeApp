@@ -9,7 +9,6 @@
 # Project Description 
 
 1. Home Screen
-* Displays a scrollable list of recipes.
 * Each recipe shows its title and the number of ingredients.
 * Users can click a recipe to view its detailed information.
 * Includes a Favorites button in the top app bar to navigate to the Favorites screen.
