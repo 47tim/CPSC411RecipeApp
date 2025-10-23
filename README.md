@@ -15,8 +15,8 @@
 
 2. Detail Screen
 * Shows detailed information for the selected recipe:
-List of ingredients.
-Step-by-step preparation instructions.
+ * List of ingredients.
+ * Step-by-step preparation instructions.
 * Users can toggle a recipe as a favorite using a heart icon.
 * Includes a back navigation button to return to the previous screen.
 
