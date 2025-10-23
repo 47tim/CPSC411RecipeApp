@@ -6,7 +6,6 @@
 * Keigo Noguchi, keigo.noguchi@csu.fullerton.edu, 885486746
 * Timothy Hyde, hydet47@csu.fullerton.edu, 884583832
 
-# Project Description 
 
 1. Home Screen
 * Each recipe shows its title and the number of ingredients.
@@ -45,6 +44,10 @@ Clean and minimal interface with Material Design components including the TopApp
 3. Navigation implementation for screen transitions.
 4. Hardcoded recipe data in the app (no backend required).
 5. Clean UI and meaningful user interaction with favorite toggling.
+
+Video Demo:
+# Project Description [CPSC 411 Midterm Demo - Keigo Noguchi.mp3](https://github.com/user-attachments/files/23089613/CPSC.411.Midterm.Demo.-.Keigo.Noguchi.mp3)
+
 
 Screenshots:
 
