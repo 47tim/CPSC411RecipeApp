@@ -1,8 +1,7 @@
 package com.example.recipeapp.ui
 
-import androidx.compose.material.icons.Icons // Add this line
-import androidx.compose.material.icons.filled.ArrowBack // Add this line
-import androidx.compose.foundation.clickable
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -10,8 +9,9 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.recipeapp.viewmodel.Recipe
+import com.example.recipeapp.model.Recipe
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun FavoritesScreen(
     favoriteRecipes: List<Recipe>,

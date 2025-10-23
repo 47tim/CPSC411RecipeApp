@@ -5,8 +5,14 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.recipeapp.Recipe
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.FavoriteBorder
 
+import com.example.recipeapp.model.Recipe
+
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DetailScreen(
     recipe: Recipe,

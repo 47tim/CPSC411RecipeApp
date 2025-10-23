@@ -8,7 +8,7 @@ import androidx.compose.material3.Surface
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
 import com.example.recipeapp.viewmodel.RecipeViewModel
-import com.example.recipesapp.navigation.NavGraph
+import com.example.recipeapp.navigation.NavGraph
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

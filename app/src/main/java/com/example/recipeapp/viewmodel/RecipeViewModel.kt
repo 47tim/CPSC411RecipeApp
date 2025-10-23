@@ -1,35 +1,50 @@
 package com.example.recipeapp.viewmodel
 
-import androidx.compose.runtime.mutableStateListOf
 import androidx.lifecycle.ViewModel
-
-data class Recipe(
-    val id: Int,
-    val title: String,
-    val ingredients: List<String>,
-    val steps: List<String>
-)
+import com.example.recipeapp.model.Recipe
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
 
 class RecipeViewModel : ViewModel() {
 
-    // Hardcoded data
-    val recipes = listOf(
-        Recipe(1, "Spaghetti Carbonara", listOf("Spaghetti", "Eggs", "Pancetta", "Parmesan"), listOf("Boil pasta", "Cook pancetta", "Mix with eggs & cheese")),
-        Recipe(2, "Pancakes", listOf("Flour", "Milk", "Eggs", "Sugar"), listOf("Mix ingredients", "Pour on pan", "Flip when golden")),
-        Recipe(3, "Guacamole", listOf("Avocado", "Onion", "Lime", "Salt"), listOf("Mash avocado", "Add chopped onion", "Season to taste"))
-    )
+    private val _recipes = MutableStateFlow<List<Recipe>>(emptyList())
+    val recipes: StateFlow<List<Recipe>> = _recipes.asStateFlow()
 
-    // Favorite state
-    private val _favoriteIds = mutableStateListOf<Int>()
-    val favoriteRecipes: List<Recipe>
-        get() = recipes.filter { it.id in _favoriteIds }
+    private val _favoriteRecipes = MutableStateFlow<List<Recipe>>(emptyList())
+    val favoriteRecipes: StateFlow<List<Recipe>> = _favoriteRecipes.asStateFlow()
 
-    fun toggleFavorite(id: Int) {
-        if (_favoriteIds.contains(id)) _favoriteIds.remove(id)
-        else _favoriteIds.add(id)
+    init {
+        _recipes.value = loadRecipes()
     }
 
-    fun isFavorite(id: Int): Boolean = _favoriteIds.contains(id)
+    private fun loadRecipes(): List<Recipe> {
+        return listOf(
+            Recipe(1, "Classic Pancakes", listOf("Flour", "Milk", "Egg", "Sugar"), listOf("Mix all ingredients.", "Pour onto hot griddle.")),
+            Recipe(2, "Spaghetti Bolognese", listOf("Pasta", "Ground Beef", "Tomato Sauce"), listOf("Cook pasta.", "Cook beef and add sauce.", "Serve together."))
+        )
+    }
 
-    fun getRecipeById(id: Int): Recipe? = recipes.find { it.id == id }
+    fun getRecipeById(id: Int): Recipe? {
+        return _recipes.value.find { it.id == id }
+    }
+
+    fun isFavorite(id: Int): Boolean {
+        return _favoriteRecipes.value.any { it.id == id }
+    }
+
+    fun toggleFavorite(id: Int) {
+        val recipe = getRecipeById(id) ?: return
+
+        if (isFavorite(id)) {
+            _favoriteRecipes.update { currentFavorites ->
+                currentFavorites.filterNot { it.id == id }
+            }
+        } else {
+            _favoriteRecipes.update { currentFavorites ->
+                currentFavorites + recipe
+            }
+        }
+    }
 }
