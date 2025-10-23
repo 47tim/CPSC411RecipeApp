@@ -14,9 +14,7 @@
 * Includes a Favorites button in the top app bar to navigate to the Favorites screen.
 
 2. Detail Screen
-* Shows detailed information for the selected recipe:
- * List of ingredients.
- * Step-by-step preparation instructions.
+* Shows detailed information for the selected recipe: List of ingredients and step-by-step preparation instructions.
 * Users can toggle a recipe as a favorite using a heart icon.
 * Includes a back navigation button to return to the previous screen.
 
