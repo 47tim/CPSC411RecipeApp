@@ -46,8 +46,8 @@ Clean and minimal interface with Material Design components including the TopApp
 5. Clean UI and meaningful user interaction with favorite toggling.
 
 Video Demo:
-# Project Description [CPSC 411 Midterm Demo - Keigo Noguchi.mp3](https://github.com/user-attachments/files/23089613/CPSC.411.Midterm.Demo.-.Keigo.Noguchi.mp3)
 
+[![Watch the demo](https://img.youtube.com/vi/hHHg-7oFun0/0.jpg)](https://www.youtube.com/watch?v=hHHg-7oFun0)
 
 Screenshots:
 
